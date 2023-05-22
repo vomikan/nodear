@@ -1,0 +1,4 @@
+# Output file
+*.json
+# Ini file with privat info
+*.ini
