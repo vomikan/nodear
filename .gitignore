@@ -2,3 +2,5 @@
 *.json
 # Ini file with privat info
 *.ini
+*.bak
+*.session
