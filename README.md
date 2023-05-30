@@ -1,9 +1,9 @@
 # nodear
-
-Понадобился фикс для повторного запуса
+### Подготовка к работе
+Понадобился фикс для повторного запуска скрипта open_tele.py
 https://github.com/thedemons/opentele/pull/74/files
 
-Создаём файл с содержимым из https://my.telegram.org/apps где username не имеет значения
+Создаём файл config.ini с содержимым из https://my.telegram.org/apps где username не имеет значения
 
 ```
 [Telegram]
@@ -16,7 +16,8 @@ username = telethon
 Этот скрипт из файла %USERPROFILE%\AppData\Roaming\Telegram Desktop\tdata сделает файл telethon.session
 Файл можно использовать продолжительное время, т.е. его не требуется формировать кажный раз.
 
-Можно запускать срипт ```python3 tele_reader.py https://t.me/SolovievLive 2023-05-30T15:45:13+00:00 SolovievLive.json```
+### Чтение сообщений
+Запускаем срипт ```python3 tele_reader.py https://t.me/SolovievLive 2023-05-30T15:45:13+00:00 SolovievLive.json```
 
 где параметры:
 
@@ -24,4 +25,8 @@ username = telethon
 - дата, после которой, считывать сообщения;
 - Имя файла в который сохранится результат.
 
-В результате получаем массив JSON сообщений (только текст) начиная с обозначенной даты.
+В результате получаем массив JSON сообщений (только текст) начиная с обозначенной даты и времени.
+
+### Отправка сообщений
+Запускаем срипт ```python3 tele_sender.py https://t.me/edotechestv_chat "Родина, Свобода, Путин!"```
+
