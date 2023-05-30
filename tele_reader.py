@@ -45,19 +45,18 @@ async def get_messages_at_date(channel, date, filename):
 			return json.JSONEncoder.default(self, o)
 	all_messages = []
 	async for msg in client.iter_messages(channel, reverse = True, offset_date=date):
-		all_messages.append(msg.text)
-	
+		if msg.text:
+			all_messages.append({'date': msg.date, 'text': msg.text})
+
 	with open(filename, 'w', encoding='utf8') as outfile:
 		json.dump(all_messages, outfile, ensure_ascii=False, cls=DateTimeEncoder)
 
 async def main():
-	#date_of_post = tz.localize(datetime.strptime(sys.argv[2], '%Y-%m-%d')) #datetime(2023, 5, 25, 0, 0, 0, tzinfo=utc) #parse('2023-05-28 00:00:00') #datetime.datetime(2023, 5, 28)
-	tz = pytz.timezone('Europe/Moscow')
-	date_of_post = parse(sys.argv[2]).replace(tzinfo=pytz.timezone('Europe/Moscow'))
+	date_of_post = parse(sys.argv[2]) + timedelta(0,1) 
 	url = sys.argv[1]
 	filename = sys.argv[3]
 	channel = await client.get_entity(url)
-	#await dump_all_participants(channel)
+	#print(date_of_post)
 	await get_messages_at_date(channel, date_of_post, filename)
 
 with client:
