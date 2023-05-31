@@ -20,6 +20,7 @@ to install or upgrade the library to the latest version:
 ```
 python3 -m pip install --upgrade pip
 python3 -m pip install --upgrade telethon
+pip3 install python-dateutil
 ```
 
 ### Чтение сообщений
