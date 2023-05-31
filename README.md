@@ -16,6 +16,12 @@ username = telethon
 Этот скрипт из файла %USERPROFILE%\AppData\Roaming\Telegram Desktop\tdata сделает файл telethon.session
 Файл можно использовать продолжительное время, т.е. его не требуется формировать кажный раз.
 
+to install or upgrade the library to the latest version:
+```
+python3 -m pip install --upgrade pip
+python3 -m pip install --upgrade telethon
+```
+
 ### Чтение сообщений
 Запускаем срипт ```python3 tele_reader.py https://t.me/SolovievLive 2023-05-30T15:45:13+00:00 SolovievLive.json```
 
