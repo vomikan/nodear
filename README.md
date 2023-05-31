@@ -23,6 +23,8 @@ python3 -m pip install --upgrade telethon
 pip3 install python-dateutil
 pip3 install pytz
 ```
+Из-за вот этго кейса, пришлось делать downgrade telethon до версии 1.27
+https://github.com/lonamiwebs/telethon/issues/4092?ysclid=lic6ma6j9e43921132
 
 ### Чтение сообщений
 Запускаем срипт ```python3 tele_reader.py https://t.me/SolovievLive 2023-05-30T15:45:13+00:00 SolovievLive.json```

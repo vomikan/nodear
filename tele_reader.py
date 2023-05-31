@@ -46,8 +46,11 @@ async def get_messages_at_date(channel, date, filename):
 	all_messages = []
 	async for msg in client.iter_messages(channel, reverse = True, offset_date=date):
 		if msg.text:
-			#print (msg)
-			all_messages.append({'id':msg.id, 'date':msg.date, 'text':msg.text})
+			#print (msg.from_id)
+			if hasattr(msg.from_id, 'user_id'):
+				all_messages.append({'id':msg.id, 'user_id':msg.from_id.user_id, 'date':msg.date, 'text':msg.text})
+			else:
+				all_messages.append({'id':msg.id, 'date':msg.date, 'text':msg.text})
 
 	with open(filename, 'w', encoding='utf8') as outfile:
 		json.dump(all_messages, outfile, ensure_ascii=False, cls=DateTimeEncoder)
