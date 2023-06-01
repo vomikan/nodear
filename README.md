@@ -23,7 +23,7 @@ python3 -m pip install --upgrade telethon
 pip3 install python-dateutil
 pip3 install pytz
 ```
-Из-за вот этго кейса, пришлось делать downgrade telethon до версии 1.27
+Из-за вот этого кейса, пришлось делать downgrade telethon до версии 1.27
 https://github.com/lonamiwebs/telethon/issues/4092?ysclid=lic6ma6j9e43921132
 
 ### Чтение сообщений
@@ -38,5 +38,7 @@ https://github.com/lonamiwebs/telethon/issues/4092?ysclid=lic6ma6j9e43921132
 В результате получаем массив JSON сообщений (только текст) начиная с обозначенной даты и времени.
 
 ### Отправка сообщений
-Запускаем срипт ```python3 tele_sender.py https://t.me/edotechestv_chat "Родина, Свобода, Путин!"```
+Запускаем срипт ```python3 tele_sender.py https://t.me/edotechestv_chat```
+В результате из папки "files" будет считан рандомный html файл и его содержимое отправится в качестве сообщения
+
 
