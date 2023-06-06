@@ -26,7 +26,7 @@ config.read("config.ini")
 # Присваиваем значения внутренним переменным
 api_id   = config['Telegram']['api_id']
 api_hash = config['Telegram']['api_hash']
-username = config['Telegram']['username']
+username = sys.argv[3]
 
 #proxy = (proxy_server, proxy_port, proxy_key)
 
@@ -58,7 +58,7 @@ async def get_messages_at_date(channel, date, filename):
 async def main():
 	date_of_post = parse(sys.argv[2]) + timedelta(0,1) 
 	url = sys.argv[1]
-	filename = sys.argv[3]
+	filename = sys.argv[4]
 	channel = await client.get_entity(url)
 	#print(date_of_post)
 	await get_messages_at_date(channel, date_of_post, filename)
