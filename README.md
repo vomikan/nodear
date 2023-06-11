@@ -26,14 +26,19 @@ pip3 install pytz
 Из-за вот этого кейса, пришлось делать downgrade telethon до версии 1.27
 https://github.com/lonamiwebs/telethon/issues/4092?ysclid=lic6ma6j9e43921132
 
+В итоге надо апгейдить Python до 3.9
+Для этого сначала надо установить  sudo yum install libsqlite3-dev
+и с ./configure --enable-loadable-sqlite-extensions собрать Пайтон.
+
 ### Чтение сообщений
-Запускаем срипт ```python3 tele_reader.py https://t.me/SolovievLive 2023-05-30T15:45:13+00:00 SolovievLive.json```
+Запускаем срипт ```python3 tele_reader.py https://t.me/SolovievLive 2023-05-30T15:45:13+00:00 telethon SolovievLive.json```
 
 где параметры:
 
-- url канала;
-- дата, после которой, считывать сообщения;
-- Имя файла в который сохранится результат.
+1) url канала;
+2) дата, после которой, считывать сообщения;
+3) название файла сессии (telethon.session);
+4) Имя файла в который сохранится результат.
 
 В результате получаем массив JSON сообщений (только текст) начиная с обозначенной даты и времени.
 
