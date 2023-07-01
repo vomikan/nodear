@@ -57,12 +57,10 @@ https://github.com/lonamiwebs/telethon/issues/4092?ysclid=lic6ma6j9e43921132
 
 ##VK
 ### Подготовка к работе
-pip3 install vk_api
-pip3 install urllib3==1.26.6 
+```pip3 install vk_api
+pip3 install urllib3==1.26.6``` 
 
-Тестовый вызов из Windows:
-```type test.txt|python vk_post.py https://t.me/nod_news ```
-где test.txt файл с содержимым поста.
+Конфигурация VK и токен описаны, например, тут: https://badtry.net/vk-api-osnovy-poluchieniie-tokiena/#vkcom
 
 Добавляем в  файл config.ini
 ```
@@ -70,3 +68,7 @@ pip3 install urllib3==1.26.6
 access_token = vk1.a.3M..........-W5w
 owner_id = 1234567
 ```
+
+Тестовый вызов из Windows:
+```type test.txt|python vk_post.py https://t.me/nod_news ```
+где test.txt файл с содержимым поста.
