@@ -19,11 +19,13 @@ text = ""
 for line in sys.stdin:
     text += line
 
+url = sys.argv[1]
 
 def post():
     vk.wall.post(
         owner_id = id,  # id пользователя / сообщества
         message = text,
+        attachments = url,
         copyright = 'https://t.me/MinisterstvoDizaina'
     )
 
