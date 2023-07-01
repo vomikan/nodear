@@ -7,8 +7,8 @@
     </xsl:template>
       
     <xsl:template match="*">
-     <xsl:value-of select="emoji"/>&#xA0;<xsl:value-of select="channel"/>&#xA0;🔗&#xA0;<a href="{link}"><xsl:value-of select="text" /></a><br />
-          <xsl:text>&#xa;</xsl:text><br />
+     <xsl:value-of select="emoji"/> <xsl:value-of select="channel"/> 🔗 <a href="{link}"><xsl:value-of select="text" /></a>
+          <xsl:text>&#xa;</xsl:text>
           <xsl:text>&#xa;</xsl:text>
     </xsl:template>    
 </xsl:transform>
