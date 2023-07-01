@@ -1,5 +1,7 @@
 # nodear
-##Telegram
+
+## Telegram
+
 ### Подготовка к работе
 Понадобился фикс для повторного запуска скрипта open_tele.py
 https://github.com/thedemons/opentele/pull/74/files
@@ -55,10 +57,11 @@ https://github.com/lonamiwebs/telethon/issues/4092?ysclid=lic6ma6j9e43921132
 Запускаем срипт ```python3 tele_file_sender.py https://t.me/edotechestv_chat```
 В результате из папки "files" будет считан рандомный html файл и его содержимое отправится в качестве сообщения
 
-##VK
+## VK
 ### Подготовка к работе
 ```pip3 install vk_api
-pip3 install urllib3==1.26.6``` 
+pip3 install urllib3==1.26.6
+``` 
 
 Конфигурация VK и токен описаны, например, тут: https://badtry.net/vk-api-osnovy-poluchieniie-tokiena/#vkcom
 
