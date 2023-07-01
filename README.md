@@ -63,3 +63,10 @@ pip3 install urllib3==1.26.6
 Тестовый вызов из Windows:
 ```type test.txt|python vk_post.py https://t.me/nod_news ```
 где test.txt файл с содержимым поста.
+
+Добавляем в  файл config.ini
+```
+[VK]
+access_token = vk1.a.3M..........-W5w
+owner_id = 1234567
+```
