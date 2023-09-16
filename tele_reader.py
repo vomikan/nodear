@@ -34,7 +34,7 @@ client = TelegramClient(username, api_id, api_hash)
 
 client.start()
 
-async def get_messages_at_date(channel, date, filename):
+async def get_messages_at_date(channel, date):
 	class DateTimeEncoder(json.JSONEncoder):
 		'''Класс для сериализации записи дат в JSON'''
 		def default(self, o):
@@ -56,16 +56,16 @@ async def get_messages_at_date(channel, date, filename):
 			else:
 				all_messages.append({'id':msg.id, 'date':msg.date, 'text':msg.message, 'fwd_from':fwd_from})
 
-	with open(filename, 'w', encoding='utf8') as outfile:
-		json.dump(all_messages, outfile, ensure_ascii=False, cls=DateTimeEncoder)
+	# Convert Python object to JSON-formatted string
+	json_str = json.dumps(all_messages, ensure_ascii=False, cls=DateTimeEncoder)
+	print (json_str)
 
 async def main():
 	date_of_post = parse(sys.argv[2]) + timedelta(0,1) 
 	url = sys.argv[1]
-	filename = sys.argv[4]
 	channel = await client.get_entity(url)
 	#print(date_of_post)
-	await get_messages_at_date(channel, date_of_post, filename)
+	await get_messages_at_date(channel, date_of_post)
 
 with client:
 	client.loop.run_until_complete(main())
